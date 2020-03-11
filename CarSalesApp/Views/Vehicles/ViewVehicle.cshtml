@@ -1,0 +1,59 @@
+﻿@model Vehicles
+
+<h3>@Model.Make @Model.Model Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Mileage</th>
+        <th>Price</th>
+        <th>Color</th>
+    </tr>
+    <tr>
+        <td>@Model.Vehicle_ID</td>
+        <td>@Model.Make</td>
+        <td>@Model.Model</td>
+        <td>@Model.Year</td>
+        <td>@Model.Mileage</td>
+        <td>@Model.Price</td>
+        <td>@Model.Color</td>
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Vehicles/UpdateVehicle/@Model.Vehicle_ID">Update this Vehicle</a>
+</div>
+<br />
+<div style="display: block">
+    @using (Html.BeginForm("DeleteVehicle", "Vehicles", "Post"))
+    {
+        <input type="hidden" asp-for="Vehicle_ID" value="@Model.Vehicle_ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this vehicle listing" />
+    }
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<br />
+
