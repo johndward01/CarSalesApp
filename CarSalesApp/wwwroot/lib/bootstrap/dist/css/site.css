@@ -91,6 +91,10 @@ body{
     background: url("img/blackcar.jpg") center fixed;
     background-size: cover;
 }
+
+button{
+    padding-right: 20px;
+}
 /*DarkReader exported CSS---------------------------------------------*/
 .jfk-bubble {
     filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;

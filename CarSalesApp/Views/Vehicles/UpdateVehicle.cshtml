@@ -1,7 +1,11 @@
 ﻿@model Vehicles
 
 <h2>Update @Model.Make @Model.Model</h2>
-
+<style>
+    body{
+        background-image: url('https://i.imgur.com/tkGHO7b.jpg');
+    }
+</style>
 @using (Html.BeginForm("UpdateVehicleToDatabase", "Vehicles", "Post"))
 {
     <input asp-for="Vehicle_ID" type="hidden" value="@Model.Vehicle_ID" />
