@@ -24,7 +24,7 @@ namespace CarSalesApp
 
         public Vehicles GetVehicle(int id)
         {
-            return _conn.QuerySingle<Vehicles>("SELECT * FROM car_data WHERE Vehicle_ID = @id", new { id });
+            return _conn.QuerySingle<Vehicles>("SELECT * FROM car_data WHERE Vehicle_ID = @id", new { id = id });
         }
 
         public void InsertVehicle(Vehicles vehicleToInsert)
