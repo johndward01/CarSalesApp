@@ -9,30 +9,30 @@ namespace CarSalesApp.Controllers
 {
     public class VehiclesController : Controller
     {
-        private readonly IVehicle repo;
+        private readonly IVehicle _repository;
 
         public VehiclesController(IVehicle repo)
         {
-            this.repo = repo;
+            _repository = repo;
         }
 
         public IActionResult Index()
         {
-            var vehicles = repo.GetAllVehicles();
+            var vehicles = _repository.GetAllVehicles();
             return View(vehicles);
         }
 
         public IActionResult ViewVehicle(int id)
         {
-            var vehicle = repo.GetVehicle(id);
+            var vehicle = _repository.GetVehicle(id);
             return View(vehicle);
         }
 
         public IActionResult UpdateVehicle(int id)
         {
-            Vehicles vehicle = repo.GetVehicle(id);
+            Vehicles vehicle = _repository.GetVehicle(id);
 
-            repo.UpdateVehicle(vehicle);
+            _repository.UpdateVehicle(vehicle);
 
             if (vehicle == null)
 
@@ -43,7 +43,7 @@ namespace CarSalesApp.Controllers
 
         public IActionResult UpdateVehicleToDatabase(Vehicles vehicle)
         {
-            repo.UpdateVehicle(vehicle);
+            _repository.UpdateVehicle(vehicle);
 
             return RedirectToAction("ViewVehicle", new { id = vehicle.Vehicle_ID });
         }        
@@ -51,22 +51,22 @@ namespace CarSalesApp.Controllers
         public IActionResult InsertVehicle()
         {
             var vehicle = new Vehicles();
-            vehicle.Makes = repo.AssignCarMake();
-            vehicle.Models = repo.AssignCarModel();
+            vehicle.Makes = _repository.AssignCarMake();
+            vehicle.Models = _repository.AssignCarModel();
             
             return View(vehicle);
         }
 
         public IActionResult InsertVehicleToDatabase(Vehicles vehiclesToInsert)
         {
-            repo.InsertVehicle(vehiclesToInsert);
+            _repository.InsertVehicle(vehiclesToInsert);
 
             return RedirectToAction("Index");
         }
 
         public IActionResult DeleteVehicle(Vehicles vehicle)
         {
-            repo.DeleteVehicle(vehicle);
+            _repository.DeleteVehicle(vehicle);
 
             return RedirectToAction("Index");
         }
