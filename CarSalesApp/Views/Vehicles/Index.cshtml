@@ -1,34 +1,49 @@
 ﻿@model IEnumerable<Vehicles>
 
-<h2>Vehicles</h2>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>Vehicles</h2>
 
-<div style="display: block">
-    <a href="/Vehicles/InsertVehicle/">Create a New Vehicle Listing</a>
-</div>
+        
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Mileage</th>
-        <th>Price</th>
-        <th>Color</th>
-    </tr>
 
-    @foreach (var vehicle in Model)
-    {
-        <tr>
-            <td><a href=/Vehicles/ViewVehicle/@vehicle.Vehicle_ID>@vehicle.Vehicle_ID</a></td>
-            <td>@vehicle.Make</td>
-            <td>@vehicle.Model</td>
-            <td>@vehicle.Year</td>
-            <td>@vehicle.Mileage</td>
-            <td>@vehicle.Price</td>
-            <td>@vehicle.Color</td>
-        </tr>
+        <div style="display: block">
+            <a href="/Vehicles/InsertVehicle/">Create a New Vehicle Listing</a>
+        </div>
 
-    }
-</table>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Mileage</th>
+                <th>Price</th>
+                <th>Color</th>
+            </tr>
+
+            @foreach (var vehicle in Model)
+            {
+                <tr>
+                    <td><a href=/Vehicles/ViewVehicle/@vehicle.Vehicle_ID>@vehicle.Vehicle_ID</a></td>
+                    <td>@vehicle.Make</td>
+                    <td>@vehicle.Model</td>
+                    <td>@vehicle.Year</td>
+                    <td>@vehicle.Mileage</td>
+                    <td>@vehicle.Price</td>
+                    <td>@vehicle.Color</td>
+                </tr>
+
+            }
+        </table>
+    </body>
+</html>
+
+
 

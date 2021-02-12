@@ -32,7 +32,7 @@ namespace CarSalesApp.Controllers
         {
             Vehicles vehicle = _repository.GetVehicle(id);
 
-            _repository.UpdateVehicle(vehicle);
+            //_repository.UpdateVehicle(vehicle);
 
             if (vehicle == null)
 
