@@ -7,26 +7,27 @@
     <title>Car Sales App</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/2Urvv7V.jpg');
+            background-attachment: fixed;
+        }
+    </style>
 </head>
-<body class="border border-primary">
+<body>
     <br />
     <br />
     <br />
-    <div class="container-fluid">
-        <h3>Welcome to the CraigsList CopyCat App!</h3>
-        <form action="/action_page.php" method="post">
-            <div class="container">
-                <h2>Login (coming soon)</h2>
-                <label for="uname" class="form-label"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required />
-                <br />
-                <label for="psw" class="form-label"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <br />
-                <button type="submit">Login</button>
-                <button type="button">Register</button>
-            </div>
-        </form>
+    <div>
+        <h2>Login</h2>
+        <label for="uname" class="form-label"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
+        <br />
+        <label for="psw" class="form-label"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <br />
+        <button class="m-2" type="submit">Login</button>
+        <button type="button">Register</button>
     </div>
 </body>
 </html>
