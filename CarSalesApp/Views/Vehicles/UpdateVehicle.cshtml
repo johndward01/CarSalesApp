@@ -3,7 +3,12 @@
 <h2>Update @Model.Make @Model.Model</h2>
 <style>
     body{
+        min-height: 100%;
+        width: 100%;
         background-image: url('https://i.imgur.com/tkGHO7b.jpg');
+        background-size: cover;
+        background-repeat: no-repeat no-repeat;
+
     }
 </style>
 @using (Html.BeginForm("UpdateVehicleToDatabase", "Vehicles", "Post"))

@@ -2,10 +2,8 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: black;
-    color: rgb(255,255,255);
     text-align: center;
-    background-image: url('../img/car.jpg');
+    background: url("~/img/car1.jpg");
 }
 
 .footer {
@@ -19,6 +17,7 @@ body {
 
 .navbar {
     background-color: black;
+
 }
 
 .search {
