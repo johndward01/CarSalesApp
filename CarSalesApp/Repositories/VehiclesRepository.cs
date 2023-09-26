@@ -19,17 +19,17 @@ namespace CarSalesApp
 
         public IEnumerable<Vehicles> GetAllVehicles()
         {
-            return _conn.Query<Vehicles>("SELECT * FROM car_data;");
+            return _conn.Query<Vehicles>("SELECT * FROM car_app.car_data;");
         }       
 
         public Vehicles GetVehicle(int id)
         {
-            return _conn.QuerySingle<Vehicles>("SELECT * FROM car_data WHERE Vehicle_ID = @id", new { id = id });
+            return _conn.QuerySingle<Vehicles>("SELECT * FROM car_app.car_data WHERE Vehicle_ID = @id", new { id = id });
         }
 
         public void InsertVehicle(Vehicles vehicleToInsert)
         {
-            _conn.Execute("INSERT INTO car_data (MAKE, MODEL, YEAR, MILEAGE, PRICE, COLOR) " +
+            _conn.Execute("INSERT INTO car_app.car_data (MAKE, MODEL, YEAR, MILEAGE, PRICE, COLOR) " +
                           "VALUES (@Make, @Model, @Year, @Mileage, @Price, @Color);",
                 new
                 {
@@ -51,16 +51,16 @@ namespace CarSalesApp
 
         public void DeleteVehicle(Vehicles vehicle)
         {
-            _conn.Execute("DELETE FROM car_data WHERE Vehicle_ID = @id;", new { id = vehicle.Vehicle_ID });                
+            _conn.Execute("DELETE FROM car_app.car_data WHERE Vehicle_ID = @id;", new { id = vehicle.Vehicle_ID });                
         }
         public IEnumerable<CarMakes> GetMakes()
         {
-            return _conn.Query<CarMakes>("SELECT title FROM make;");
+            return _conn.Query<CarMakes>("SELECT title FROM car_app.make;");
         }
         
         public IEnumerable<CarModels> GetModels()
         {
-            return _conn.Query<CarModels>("SELECT title FROM model;");
+            return _conn.Query<CarModels>("SELECT title FROM car_app.model;");
         }
 
         public IEnumerable<CarMakes> AssignCarMake()
